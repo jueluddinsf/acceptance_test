@@ -4,7 +4,7 @@ Feature: As a user I want to use google Search
 
   Scenario: Verify that user can search for address
     Given I am on google search page
-    When I enter "34-18 Northern Blvd" into the search box
+    And I enter "34-18 Northern Blvd" into the search box
     Then I should see search result showing the same search "34-18 Northern Blvd" item
     Then I close the browser
 

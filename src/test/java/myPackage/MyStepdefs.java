@@ -77,4 +77,52 @@ public class MyStepdefs {
         browser.close();
         browser.quit();
     }
+
+    @Given("^I am on the home page$")
+    public void iAmOnTheHomePage() {
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        browser = new ChromeDriver();
+        String test_url = "http://newtours.demoaut.com/";
+        browser.get(test_url);
+    }
+
+    @When("^I click link \"([^\"]*)\"$")
+    public void iClickLink(String text) throws Throwable {
+        browser.findElement(By.linkText(text)).click();
+    }
+
+    @And("^I fillout all information in register page$")
+    public void iFilloutAllInformationInRegisterPage() {
+        browser.findElement(By.id("email")).sendKeys("testUser@gmail.com");
+        browser.findElement(By.cssSelector("[name=password]")).sendKeys("myPassword");
+        browser.findElement(By.name("confirmPassword")).sendKeys("myPassword");
+        browser.findElement(By.xpath("//input[@name='register']")).click();
+    }
+
+    @Then("^I should have an account created$")
+    public void iShouldHaveAnAccountCreated() {
+        boolean textExists = browser.getPageSource().contains("Thank you for registering.");
+        if (textExists) {
+            System.out.println("Passed: User was able to register for new account");
+        } else {
+            System.out.println("Failed: User was not able to register for new account");
+        }
+
+    }
+
+    @Given("^user clicks on flight$")
+    public void userClicksOnFlight() {
+        browser.findElement(By.linkText("Flights")).click();
+    }
+
+    @When("^user clicks continue from flight page$")
+    public void userClicksContinueFromFlightPage() {
+        browser.findElement(By.cssSelector("[name= findFlights]")).click();
+    }
+
+    @Then("^user should see \"([^\"]*)\"$")
+    public void userShouldSee(String expected_text) throws Throwable {
+        boolean textFoundInPage = browser.getPageSource().contains(expected_text);
+        Assert.assertTrue(textFoundInPage);
+    }
 }

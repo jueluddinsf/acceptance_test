@@ -10,14 +10,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class MyStepdefs {
-    ChromeDriver browser;
+public class MyStepdefs extends Driver {
+    Driver d = new Driver();
+    ChromeDriver browser = d.driver();
 
     @Given("^I am on google search page$")
     public void i_am_on_google_search_page() throws Exception {
         // opens chrome browser
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-        browser = new ChromeDriver();
         // go to a url
         String url = "https://www.google.com/";
         browser.get(url);

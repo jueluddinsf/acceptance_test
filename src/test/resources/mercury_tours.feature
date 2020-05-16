@@ -16,5 +16,6 @@ Feature: As a mercury tours user
     Then user should see "Blue Skies Airlines 360"
     Then user should see "Pangaea Airlines 362"
     Then user should see "Unified Airlines 363"
+    Then user should see "Unified Airlines 363"
 
 

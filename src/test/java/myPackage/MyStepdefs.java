@@ -24,8 +24,8 @@ public class MyStepdefs extends Driver {
 
     @When("^I enter \"([^\"]*)\" into the search box$")
     public void i_enter_into_the_search_box(String address) throws Exception {
-        browser.findElement(By.name("q")).sendKeys(address);
-        browser.findElement(By.name("q")).sendKeys(Keys.RETURN);
+        d.googleSearchField(browser).sendKeys(address);
+        d.googleSearchField(browser).sendKeys(Keys.RETURN);
     }
 
     @Then("^I should see search result showing the same search \"([^\"]*)\" item$")

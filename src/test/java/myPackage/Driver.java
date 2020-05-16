@@ -3,7 +3,7 @@ package myPackage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Driver {
+public class Driver extends Elements{
 
     public ChromeDriver driver() {
         // opens chrome browser

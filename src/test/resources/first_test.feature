@@ -8,7 +8,7 @@ Feature: As a user I want to use google Search
     Then I should see search result showing the same search "34-18 Northern Blvd" item
     Then I close the browser
 
-
+  @myTest
   Scenario Outline: Verify that user can search business with business name
     Given I am on google search page
     When I enter "<business_name>" into the search box

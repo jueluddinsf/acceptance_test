@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Driver extends Elements{
 
-    public ChromeDriver driver() {
+    public WebDriver driver() {
         // opens chrome browser
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
         ChromeDriver browser = new ChromeDriver();

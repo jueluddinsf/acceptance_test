@@ -8,11 +8,12 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyStepdefs extends Driver {
     Driver d = new Driver();
-    ChromeDriver browser = d.driver();
+    WebDriver browser = d.driver();
 
     @Given("^I am on google search page$")
     public void i_am_on_google_search_page() throws Exception {
@@ -24,8 +25,8 @@ public class MyStepdefs extends Driver {
 
     @When("^I enter \"([^\"]*)\" into the search box$")
     public void i_enter_into_the_search_box(String address) throws Exception {
-        d.googleSearchField(browser).sendKeys(address);
-        d.googleSearchField(browser).sendKeys(Keys.RETURN);
+        d.googleSearchField((ChromeDriver) browser).sendKeys(address);
+        d.googleSearchField((ChromeDriver) browser).sendKeys(Keys.RETURN);
     }
 
     @Then("^I should see search result showing the same search \"([^\"]*)\" item$")

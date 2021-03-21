@@ -10,5 +10,8 @@ public class Elements {
         WebElement element = browser.findElement(By.name("q"));
         return element;
     }
-
+    public WebElement googleNumberOfResults(ChromeDriver browser) {
+        WebElement element_2 = browser.findElement(By.xpath("//*[@id='result-stats']"));
+        return element_2;
+    }
 }

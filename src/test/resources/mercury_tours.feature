@@ -9,7 +9,7 @@ Feature: As a mercury tours user
     And I fillout all information in register page
     Then I should have an account created
 
-
+# this test needs to be updated.
   Scenario: Verify that if user do not have a preference for airline they should see all avilable airlines for arrival and depeture flights
      Given user clicks on flight
     When user clicks continue from flight page

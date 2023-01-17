@@ -10,6 +10,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MyStepdefs extends Driver {
@@ -26,7 +27,7 @@ public class MyStepdefs extends Driver {
 
     @When("^I enter \"([^\"]*)\" into the search box$")
     public void i_enter_into_the_search_box(String address) throws Exception {
-        d.googleSearchField(browser).sendKeys(address);
+        d.googleSearchField( browser).sendKeys(address);
         d.googleSearchField(browser).sendKeys(Keys.RETURN);
     }
 
@@ -40,7 +41,7 @@ public class MyStepdefs extends Driver {
     @Given("^I am on the home page of mercury tours$")
     public void iAmOnTheHomePageOfMercuryTours() {
         // opens chrome browser
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         browser = new ChromeDriver();
         // go to a url
         String url = "http://newtours.demoaut.com/";
@@ -81,8 +82,8 @@ public class MyStepdefs extends Driver {
 
     @Given("^I am on the home page$")
     public void iAmOnTheHomePage() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
-        browser = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "\\drivers\\chromedriver.exe");
+        //browser = new ChromeDriver();
         String test_url = "http://newtours.demoaut.com/";
         browser.get(test_url);
     }
